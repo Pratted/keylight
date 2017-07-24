@@ -1,5 +1,5 @@
 # keylight
-Change the backlit keyboard on a MacBook Pro from the command line
+Turn the backlit keyboard for a MacBook Pro on/off from the command line. I only tested this on my 2015 MBP.
 
 ## Instructions
 This is a simple wrapper script I'm running on linux. Just place keylight somewhere in $PATH.
