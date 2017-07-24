@@ -1,0 +1,21 @@
+#!/bin/bash
+
+level="$1"
+
+let OFF=0
+let MED=200
+
+bright_file="/sys/class/leds/smc::kbd_backlight/brightness"
+brightness=$(sudo cat $bright_file)
+
+#No args passed. toggle brightness.
+if [[ $# -ne 1 ]]; then 
+    if (( ! brightness )); then
+      echo $MED | sudo tee -a $bright_file > /dev/null 
+    else
+      echo $OFF | sudo tee -a $bright_file > /dev/null 
+    fi
+#Set brightness using user choice.
+else
+  echo $level | sudo tee -a $bright_file > /dev/null
+fi
